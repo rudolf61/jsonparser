@@ -1,0 +1,28 @@
+[
+  {
+    "weather": {
+      "city": "The Hague",
+      "location": {
+        "longitude": 4.32,
+        "latitude": 52.05
+      },
+      "date": "2018-01-01",
+      "rainfall": 5,
+      "airpressure": 1020,
+      "active": true
+    }
+  },
+  {
+    "weather": {
+      "city": "Madrid",
+      "location": {
+        "longitude": -3.69
+        "latitude": 40.40
+      },
+      "date": "2018-01-01",
+      "rainfall": 5,
+      "airpressure": 1020,
+      "active": null
+    }
+  }
+]

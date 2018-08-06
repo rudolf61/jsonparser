@@ -260,5 +260,47 @@ public class JsonValue {
         throw new JsonException("Conversion error. Conversion for " + clz.getSimpleName() + " is not supported");
     }
 
+    public Object getValue() {
+        if (nullValue) return null;
 
+        if (clz == Boolean.class) {
+            byte b = bb.get();
+            bb.rewind();
+            return b == 0 ? Boolean.FALSE : Boolean.TRUE;
+        }
+        if (clz == String.class) {
+            byte[] bytes = bb.array();
+            bb.rewind();
+            String val = new String(bytes, StandardCharsets.UTF_8);
+            return val;
+        }
+        if (clz == Integer.class) {
+            int i = bb.getInt();
+            bb.rewind();
+            return Integer.valueOf(i);
+        }
+        if (clz == Long.class) {
+            long l = bb.getLong();
+            bb.rewind();
+            return Long.valueOf(l);
+        }
+        if (clz == Double.class) {
+            double d = bb.getDouble();
+            bb.rewind();
+            return Double.valueOf(d);
+        }
+        if (clz == Float.class) {
+            float f = bb.getFloat();
+            bb.rewind();
+            return Float.valueOf(f);
+        }
+
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        Object val = getValue();
+        return  val == null ? "null" : val.toString();
+    }
 }
