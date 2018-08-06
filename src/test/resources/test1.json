@@ -1,0 +1,11 @@
+{
+  "name" : "Jan Pietersen",
+  "scores" : [10,20,30,40,50],
+  "address" : {
+    "street" : "Op de hoge bommel",
+    "houseNumber" : 231,
+    "city" : "Afdracht",
+  },
+  "mail" : false,
+  "wage" : 2328.19
+}
